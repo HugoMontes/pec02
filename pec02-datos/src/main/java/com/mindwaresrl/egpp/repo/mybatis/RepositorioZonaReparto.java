@@ -45,8 +45,11 @@ public class RepositorioZonaReparto implements Repositorio<ZonaReparto>{
 	@Override
 	public ZonaReparto recuperar(String id) {
 		//TODO recuperar la ZonaReparto del Map BD, cargar la estructura si es necesario 
-
-		return null;
+		if (this.bd == null) {
+			recuperarTodos();
+		}
+		
+		return bd.get(id);
 	}
 
 }

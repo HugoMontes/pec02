@@ -28,7 +28,7 @@ public class RepositorioGasto implements Repositorio<Gasto>{
 	
 	private SqlSessionFactory sessionFactory;
 	private Map<String, Gasto> bd = null;
-	private Repositorio<ZonaReparto> repositorioZona;;
+	private Repositorio<ZonaReparto> repositorioZona;
 	
 	public RepositorioGasto(){
 		
@@ -50,8 +50,8 @@ public class RepositorioGasto implements Repositorio<Gasto>{
 				MapperGasto mapper = sesionMyBatis.getMapper(MapperGasto.class);
 				List<RegistroGasto> registros =  mapper.recuperarTodos();
 				for (RegistroGasto registro : registros) {
-					//TODO crear las instancia de Gasto empleando las instancia de RegistroGasto
-					Gasto gasto = null;
+					//DONE crear las instancia de Gasto empleando las instancia de RegistroGasto
+					Gasto gasto = crearGasto(registro);
 					this.bd.put(gasto.getId(), gasto);
 				}
 			}
@@ -69,5 +69,10 @@ public class RepositorioGasto implements Repositorio<Gasto>{
 		return bd.get(id);
 	}
 	
+	private Gasto crearGasto(RegistroGasto registro) {
+		ZonaReparto zonaReparto = repositorioZona.recuperar(registro.idZona);
+		Gasto gasto = new Gasto(registro.id, registro.descripcion, registro.importe, zonaReparto);
+		return gasto;
+	}	
 
 }

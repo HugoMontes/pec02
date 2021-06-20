@@ -6,11 +6,11 @@ CPd Nombre Propietario                        %C  %E  %G         C.        E.   
 0-A Maria Gutierrez                            0   8   0       0,00    390,88      0,00    390,88
 1-A Ricardo Torres                            12   9   0     549,60    439,74      0,00    989,34
 0-B Miguel Palacios                            0   9   0       0,00    439,74      0,00    439,74
-2-A Jorge Salas                               20  15   0     916,00    732,90      0,00   1648,90
 1-B Tomas Asensio                             14  10   0     641,20    488,60      0,00   1129,80
+2-A Jorge Salas                               20  15   0     916,00    732,90      0,00   1648,90
 0-C Nuria Mas                                  0   9   0       0,00    439,74      0,00    439,74
-2-B Jaime Rodriguez                           20  15   0     916,00    732,90      0,00   1648,90
 1-C Enrique Alos                              14  10   0     641,20    488,60      0,00   1129,80
+2-B Jaime Rodriguez                           20  15   0     916,00    732,90      0,00   1648,90
 2-C Nestor Crespo                             20  15   0     916,00    732,90      0,00   1648,90
 P10 Ruben Palencia                             0   0  10       0,00      0,00     33,60     33,60
 P01 Paula Cabos                                0   0  10       0,00      0,00     33,60     33,60

@@ -32,6 +32,9 @@ public class ZonaReparto implements Entidad  {
 	private TipoReparto tipoReparto;
 	private List<Gasto> gastos = new ArrayList<>();
 	
+	public ZonaReparto() {
+	}
+	
 	public ZonaReparto(String id, String nombre, TipoReparto tipoReparto) {
 		this.id = id;
 		this.nombre = nombre;

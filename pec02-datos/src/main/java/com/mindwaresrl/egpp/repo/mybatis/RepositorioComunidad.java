@@ -31,9 +31,14 @@ public class RepositorioComunidad implements Repositorio<Comunidad>{
 		if (this.bd == null) {
 			bd = new HashMap<>();
 			try ( SqlSession sesionMyBatis = sessionFactory.openSession() ) {
-				//TODO Complete esta sección consultando la BD para obtener una List<Comunidad>
+				//DONE Complete esta sección consultando la BD para obtener una List<Comunidad>
 				//debe emplear los mecanismos de MyBatis para realizar la consulta
 				//agrege los elementos de la lista al Map db
+				MapperComunidad mapper = sesionMyBatis.getMapper(MapperComunidad.class);
+				List<Comunidad> entidades =  mapper.recuperarTodos();
+				for (Comunidad entidad : entidades) {
+					this.bd.put(entidad.getId(), entidad);
+				}
 			}
 		}
 		

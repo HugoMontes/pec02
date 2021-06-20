@@ -91,10 +91,19 @@ public class RepositorioPropiedad implements Repositorio<Propiedad>{
 		return propiedad;
 	}
 
-	//TODO Crear una instancia de la clase Departamento empleando los datos del registro
+	//DONE Crear una instancia de la clase Departamento empleando los datos del registro
 	private Propiedad crearDepartamento(RegistroPropiedad registro) {
 		Propiedad propiedad = null;
-
+		Propietario propietario = repositorioPropietario.recuperar(registro.idPropietario);
+		Map<ZonaReparto, Double> porcentajePorZona = convertirZonaReparto(registro.porcentajeReparto); 
+		
+		propiedad = new Departamento(registro.id, 
+				registro.metrosCuadrados, 
+				propietario, 
+				porcentajePorZona, 
+				TipoVivienda.convert(registro.extra1), 
+				Integer.parseInt(registro.extra2));
+		
 		return propiedad;
 	}
 	
